@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>D:\雨诺\雨诺任务\接口\新华-WMS\AutoSchedule\AutoSchedule\TaskDlls\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>D:\Projects\DotnetCore\AutoSchedule\AutoSchedule\TaskDlls\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankDbHelper\BankDbHelper.csproj" />
+    <ProjectReference Include="..\ExcuteInterface\ExcuteInterface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LopSdk">
+      <HintPath>..\CommonDll\LopSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="LopSdk.Api">
+      <HintPath>..\CommonDll\LopSdk.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\Projects\DotnetCore\AutoSchedule\CommonDll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenApiSDK">
+      <HintPath>..\CommonDll\OpenApiSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\CommonDll\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
