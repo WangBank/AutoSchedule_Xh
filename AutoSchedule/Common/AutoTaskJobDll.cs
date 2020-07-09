@@ -121,7 +121,7 @@ namespace AutoSchedule.Common
                     else
                     {
                         //获取当前任务中分组数据 ,主表
-                        var dataMaindt = await _SqlHelper.GetDataTableAsync(groupSql);
+                        var dataMaindt = await _SqlHelper.GetDataTableAsync(groupSql.ToLower());
                         if (dataMaindt.Rows.Count == 0)
                         {
                             _logger.LogError("{EventId}:\r\n查询无数据：{groupSql}", dataSource[j].Name, groupSql);
@@ -140,7 +140,7 @@ namespace AutoSchedule.Common
                                 dataTables.Clear();
                                 for (int k = 0; k < sqlStrings.Length; k++)
                                 {
-                                    dataTables.Add(await _SqlHelper.GetDataTableAsync(sqlStrings[k]));
+                                    dataTables.Add(await _SqlHelper.GetDataTableAsync(sqlStrings[k].ToLower()));
                                 }
                                 maindetail.Rows.Clear();
                                 maindetail.ImportRow(dataMaindt.Rows[h]);

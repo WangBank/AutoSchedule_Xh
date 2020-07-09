@@ -92,10 +92,37 @@ namespace AutoTask
                     {
                         OrderLines.Add(new Jdwl.Api.Domain.Clps.ClpsOpenGwService.SoOrderLine
                         {
-                            OrderLineNo = dsData[i].DataDetail[0].Rows[j]["DETAILNO"].SqlDataBankToString(),
-                            ItemId = dsData[i].DataDetail[0].Rows[j]["CLPSGOODSCODE"].SqlDataBankToString(),
-                            PlanQty = dsData[i].DataDetail[0].Rows[j]["QUANTITY"].SqlDataBankToInt()
-                            ///,ProduceCode = dsData[i].DataDetail[0].Rows[j]["ProduceCode"].SqlDataBankToString()
+                            OrderLineNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("DETAILNO"),
+                            ItemId = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("CLPSGOODSCODE"),
+                            PlanQty = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("QUANTITY"),
+                            SerialNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("SerialNo"),
+                            ShopGoodsNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ShopGoodsNo"),
+                            SourceOrderCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("SourceOrderCode"),
+                            SubSourceOrderCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("SubSourceOrderCode"),
+                            VirtualSuiteGoodsName = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("VirtualSuiteGoodsName"),
+                            VirtualSuiteGoodsNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("VirtualSuiteGoodsNo"),
+                            VirtualSuiteGoodsQty = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("VirtualSuiteGoodsQty"),
+                            ActualPrice = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("ActualPrice"),
+                            BatchCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("BatchCode"),
+                            DiscountAmount = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("DiscountAmount"),
+                            ExpireDate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ExpireDate"),
+                            ExtCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ExtCode"),
+                            GoodsLevel = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("GoodsLevel"),
+                            InstallVenderId = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("InstallVenderId"),
+                            InventoryType = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("InventoryType"),
+                            ItemCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ItemCode"),
+                            ItemName = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ItemName"),
+                            ItemRemark = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ItemRemark"),
+                            OutPackageNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("OutPackageNo"),
+                            PackageNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PackageNo"),
+                            PayNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PayNo"),
+                            PlanOutQty = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PlanOutQty"),
+                            PrintName = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PrintName"),
+                            ProductDate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ProductDate"),
+                            RetailPrice = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("RetailPrice"),
+                            UnitCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("UnitCode"),
+                            UnitName = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("UnitName"),
+                            UomQty = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("UomQty")
                         });
                     }
 
@@ -121,7 +148,76 @@ namespace AutoTask
                                     Name = dsData[i].DataMain.Rows[0]["receiverName"].SqlDataBankToString(),
                                     Mobile = dsData[i].DataMain.Rows[0]["receiverMobile"].SqlDataBankToString(),
                                     DetailAddress = dsData[i].DataMain.Rows[0]["receiverAddr"].SqlDataBankToString()
-                                }
+                                },
+                                SalesPlatformOrderNo = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SalesPlatformOrderNo"),
+                                SellerMessage = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SellerMessage"),
+                                SellerNick = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SellerNick"),
+                                SellerRemark = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SellerRemark"),
+                                SendMode = dsData[i].DataMain.Rows[0].DataRowGetByteValue("SendMode"),
+                                SendWebsiteCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SendWebsiteCode"),
+                                SendWebsiteName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SendWebsiteName"),
+                                ServiceFee = dsData[i].DataMain.Rows[0].DataRowGetDoubleValue("ServiceFee"),
+                                Shipment = dsData[i].DataMain.Rows[0].DataRowGetStringValue("Shipment"),
+                                ShopNick = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ShopNick"),
+                                SoSource = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SoSource"),
+                                SourcePlatformName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SourcePlatformName"),
+                                SplitFlag = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SplitFlag"),
+                                StoreName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("StoreName"),
+                                StringAddress = dsData[i].DataMain.Rows[0].DataRowGetStringValue("StringAddress"),
+                                FreshStockCache = dsData[i].DataMain.Rows[0].DataRowGetStringValue("FreshStockCache"),
+                                IsvSoType = dsData[i].DataMain.Rows[0].DataRowGetStringValue("IsvSoType"),
+                                ThirdSite= dsData[i].DataMain.Rows[0].DataRowGetStringValue("ThirdSite"),
+                                TransactionSource = dsData[i].DataMain.Rows[0].DataRowGetStringValue("TransactionSource"),
+                                AddrAnalysis = dsData[i].DataMain.Rows[0].DataRowGetStringValue("AddrAnalysis"),
+                                AllowLack = dsData[i].DataMain.Rows[0].DataRowGetStringValue("AllowLack"),
+                                AppointDeliveryTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("AppointDeliveryTime"),
+                                ArAmount = dsData[i].DataMain.Rows[0].DataRowGetDoubleValue("ArAmount"),
+                                BankAccount = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BankAccount"),
+                                BankName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BankName"),
+                                BdOwnerNo = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BdOwnerNo"),
+                                BusinessType = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BusinessType"),
+                                BuyerMessage = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BuyerMessage"),
+                                BuyerNick = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BuyerNick"),
+                                CreateTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("CreateTime"),
+                                CustomerNo = dsData[i].DataMain.Rows[0].DataRowGetStringValue("CustomerNo"),
+                                DestinationCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("DestinationCode"),
+                                DestinationName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("DestinationName"),
+                                DiscountAmount = dsData[i].DataMain.Rows[0].DataRowGetDoubleValue("DiscountAmount"),
+                                ExpectDeliveryDate = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ExpectDeliveryDate"),
+                                ExpProductType = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ExpProductType"),
+                                ExpressCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ExpressCode"),
+                                Freight = dsData[i].DataMain.Rows[0].DataRowGetDoubleValue("Freight"),
+                                GotAmount = dsData[i].DataMain.Rows[0].DataRowGetDoubleValue("GotAmount"),
+                                InsuranceFlag = dsData[i].DataMain.Rows[0].DataRowGetByteValue("InsuranceFlag"),
+                                InvoiceFlag = dsData[i].DataMain.Rows[0].DataRowGetByteValue("InvoiceFlag"),
+                                IsColdChain = dsData[i].DataMain.Rows[0].DataRowGetByteValue("IsColdChain"),
+                                IsUrgency = dsData[i].DataMain.Rows[0].DataRowGetByteValue("IsUrgency"),
+                                ItemAmount = dsData[i].DataMain.Rows[0].DataRowGetDoubleValue("ItemAmount"),
+                                LogisticsAreaCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("LogisticsAreaCode"),
+                                LogisticsName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("LogisticsName"),
+                                MonthlyAccount = dsData[i].DataMain.Rows[0].DataRowGetStringValue("MonthlyAccount"),
+                                MultiValue = dsData[i].DataMain.Rows[0].DataRowGetStringValue("MultiValue"),
+                                OperateTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OperateTime"),
+                                OperatorCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OperatorCode"),
+                                OperatorName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OperatorName"),
+                                OrderBatchNo = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OrderBatchNo"),
+                                OrderPriority = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OrderPriority"),
+                                OrderBatchQty = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OrderBatchQty"),
+                                PackageMark = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PackageMark"),
+                                PayNo = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PayNo"),
+                                PayTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PayTime"),
+                                PhoneNumber= dsData[i].DataMain.Rows[0].DataRowGetStringValue("PhoneNumber"),
+                                PlaceOrderTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PlaceOrderTime"),
+                                PinAccount = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PinAccount"),
+                                PlanDeliveryTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PlanDeliveryTime"),
+                                PreDeliveryOrderCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PreDeliveryOrderCode"),
+                                PreDeliveryOrderId = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PreDeliveryOrderId"),
+                                ReceiveMode = dsData[i].DataMain.Rows[0].DataRowGetByteValue("ReceiveMode"),
+                                Remark = dsData[i].DataMain.Rows[0].DataRowGetStringValue("Remark"),
+                                ThirdPayment = dsData[i].DataMain.Rows[0].DataRowGetByteValue("ThirdPayment"),
+                                ThirdWayBill = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ThirdWayBill"),
+                                TotalAmount = dsData[i].DataMain.Rows[0].DataRowGetDoubleValue("TotalAmount"),
+                                Transport = dsData[i].DataMain.Rows[0].DataRowGetStringValue("Transport")
                             },
                             OrderLines = OrderLines
                         }
@@ -202,7 +298,26 @@ namespace AutoTask
                             ItemNo = dsData[i].DataDetail[0].Rows[j]["CLPSGOODSCODE"].SqlDataBankToString(),
                             PlanQty = dsData[i].DataDetail[0].Rows[j]["QUANTITY"].SqlDataBankToInt(),
                             GoodsStatus = "1",
-                            ProduceCode = dsData[i].DataDetail[0].Rows[j]["ProduceCode"].SqlDataBankToString()
+                            ProduceCode = dsData[i].DataDetail[0].Rows[j]["ProduceCode"].SqlDataBankToString(),
+                            ItemId = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("CLPSGOODSCODE"),
+                            SidCheckout = dsData[i].DataDetail[0].Rows[j].DataRowGetByteValue("SidCheckout"),
+                            SkuProperty = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("SkuProperty"),
+                            PlanQtyStr = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PlanQtyStr"),
+                            PackageSort = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("PackageSort"),
+                            BarCodeType = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("BarCodeType"),
+                            DetailNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("DetailNo"),
+                            ItemAmount = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ItemAmount"),
+                            ItemPrice = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ItemPrice"),
+                            BatchCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("BatchCode"),
+                            OutBizCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("OutBizCode"),
+                            ExpireDate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ExpireDate"),
+                            OwnerPackCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("OwnerPackCode"),
+                            PackageUnit = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PackageUnit"),
+                            QualityCheckRate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("QualityCheckRate"),
+                            InventoryType = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("InventoryType"),
+                            ItemName = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ItemName"),
+                            ProductDate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ProductDate"),
+                            RetailPrice = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("RetailPrice")
                         });
                     }
 
@@ -215,19 +330,40 @@ namespace AutoTask
                             {
                                 EntryOrderCode = dsData[i].DataMain.Rows[0]["LSH"].SqlDataBankToString(),
                                 OwnerCode = dsData[i].DataMain.Rows[0]["ownerCode"].SqlDataBankToString(),
-                                //the supplier code in JdWms
                                 SupplierCode = dsData[i].DataMain.Rows[0]["SupplierCode"].SqlDataBankToString(),
                                 WarehouseCode = dsData[i].DataMain.Rows[0]["warehouseNo"].SqlDataBankToString(),
+                                SupplierName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("SupplierName"),
+                                ExpectStartTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ExpectStartTime"),
+                                PoSign = dsData[i].DataMain.Rows[0].DataRowGetByteValue("PoSign"),
+                                AcceptUnQcFlag = dsData[i].DataMain.Rows[0].DataRowGetStringValue("AcceptUnQcFlag"),
+                                BillType = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BillType"),
+                                BoxFlag = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BoxFlag"),
+                                CustomsInfo = dsData[i].DataMain.Rows[0].DataRowGetStringValue("CustomsInfo"),
+                                EdiRemark = dsData[i].DataMain.Rows[0].DataRowGetStringValue("EdiRemark"),
+                                EffectiveDate = dsData[i].DataMain.Rows[0].DataRowGetStringValue("EffectiveDate"),
+                                ExpectEndTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ExpectEndTime"),
+                                Incomplete = dsData[i].DataMain.Rows[0].DataRowGetByteValue("Incomplete"),
+                                IsWithListBill = dsData[i].DataMain.Rows[0].DataRowGetByteValue("IsWithListBill"),
+                                ListBillURL = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ListBillURL"),
+                                LogisticsCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("LogisticsCode"),
+                                OrderAmount = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OrderAmount"),
+                                OrderCreateTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OrderCreateTime"),
+                                OrderMark = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OrderMark"),
+                                PoReturnMode = dsData[i].DataMain.Rows[0].DataRowGetByteValue("PoReturnMode"),
+                                PurchaseOrderCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("PurchaseOrderCode"),
+                                ReceiveLevel = dsData[i].DataMain.Rows[0].DataRowGetByteValue("ReceiveLevel"),
+                                Remark = dsData[i].DataMain.Rows[0].DataRowGetStringValue("BdOwnerNo"),
+                                UnitFlag = dsData[i].DataMain.Rows[0].DataRowGetByteValue("UnitFlag"),
+                                UnitRule = dsData[i].DataMain.Rows[0].DataRowGetStringValue("UnitRule"),
+                                WmsRemark = dsData[i].DataMain.Rows[0].DataRowGetStringValue("WmsRemark"),
+                                CustomerNo = dsData[i].DataMain.Rows[0].DataRowGetStringValue("CustomerNo"),
+                                ExpressCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("ExpressCode"),
+                                LogisticsName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("LogisticsName"),
+                                OperateTime = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OperateTime"),
+                                OperatorCode = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OperatorCode"),
+                                OperatorName = dsData[i].DataMain.Rows[0].DataRowGetStringValue("OperatorName"),
                                 OrderType = dsData[i].DataMain.Rows[0]["ORDERTYPE"].SqlDataBankToString()
-                                //RelatedOrderList = new List<Jdwl.Api.Domain.Clps.ClpsOpenGwService.RelatedOrder> {
-                                //    new Jdwl.Api.Domain.Clps.ClpsOpenGwService.RelatedOrder
-                                //    {
-                                //        OrderCode =  dsData[i].DataMain.Rows[0]["ORDERTYPE"].SqlDataBankToString(),
-                                //        OrderType =  dsData[i].DataMain.Rows[0]["ORDERTYPE"].SqlDataBankToString()
-                                //    }
-                                //}
                             },
-
                             OrderLines = OrderLines
                         }
                     };
@@ -444,7 +580,7 @@ namespace AutoTask
             try
             {
 
-
+                
                 if (string.IsNullOrEmpty(serverUrl) || string.IsNullOrEmpty(accessToken) || string.IsNullOrEmpty(appKey) || string.IsNullOrEmpty(appSecret) || string.IsNullOrEmpty(Pin))
                 {
                     await _jobLogger.WriteLogAsync(LogType.Info, "调拨出库信息推送", $"失败:数据源中缺少serverUrl、accessToken、appKey、appSecret、Pin!");
@@ -661,6 +797,23 @@ namespace AutoTask
                             GoodsStatus = "1",
                             ItemPrice = dsData[i].DataDetail[0].Rows[j]["ItemPrice"].SqlDataBankToString(),
                             ItemAmount = dsData[i].DataDetail[0].Rows[j]["ItemAmount"].SqlDataBankToString(),
+                            ItemId = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("CLPSGOODSCODE"),
+                            SidCheckout = dsData[i].DataDetail[0].Rows[j].DataRowGetByteValue("SidCheckout"),
+                            SkuProperty = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("SkuProperty"),
+                            PlanQtyStr = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PlanQtyStr"),
+                            PackageSort = dsData[i].DataDetail[0].Rows[j].DataRowGetIntValue("PackageSort"),
+                            BarCodeType = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("BarCodeType"),
+                            DetailNo = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("DetailNo"),
+                            RetailPrice = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("RetailPrice"),
+                            BatchCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("BatchCode"),
+                            OutBizCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("OutBizCode"),
+                            ExpireDate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ExpireDate"),
+                            OwnerPackCode = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("OwnerPackCode"),
+                            PackageUnit = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("PackageUnit"),
+                            QualityCheckRate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("QualityCheckRate"),
+                            InventoryType = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("InventoryType"),
+                            ItemName = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ItemName"),
+                            ProductDate = dsData[i].DataDetail[0].Rows[j].DataRowGetStringValue("ProductDate"),
                             ProduceCode = dsData[i].DataDetail[0].Rows[j]["ProduceCode"].SqlDataBankToString()
                         });
                     }

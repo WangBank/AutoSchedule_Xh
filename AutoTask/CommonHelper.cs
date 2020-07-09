@@ -14,18 +14,40 @@ namespace AutoTask
 
         public static string DataRowGetStringValue(this DataRow bankData, string key)
         {
-            return bankData.Table.Columns.Contains(key)? bankData[key].SqlDataBankToString() :  "" ;
+          
+            return bankData.Table.Columns.Contains(key.ToLower())? bankData[key].SqlDataBankToString() :  "" ;
         }
 
+        public static double DataRowGetDoubleValue(this DataRow bankData, string key)
+        {
+
+            return bankData.Table.Columns.Contains(key.ToLower()) ? bankData[key].SqlDataBankToDouble() : 0;
+        }
+        
         public static int DataRowGetIntValue(this DataRow bankData, string key)
         {
-            return bankData.Table.Columns.Contains(key) ? bankData[key].SqlDataBankToInt() : 0;
+            return bankData.Table.Columns.Contains(key.ToLower()) ? bankData[key].SqlDataBankToInt() : 0;
+        }
+
+        public static sbyte DataRowGetByteValue(this DataRow bankData, string key)
+        {
+            return bankData.Table.Columns.Contains(key.ToLower()) ? bankData[key].SqlDataBankToByte() : Convert.ToSByte(0);
         }
         public static int SqlDataBankToInt(this object bankData)
         {
             return bankData == DBNull.Value ? 0 : Convert.ToInt32(bankData);
         }
-       
+
+        public static double SqlDataBankToDouble(this object bankData)
+        {
+            return bankData == DBNull.Value ? 0 : Convert.ToDouble(bankData);
+        }
+
+        public static sbyte SqlDataBankToByte(this object bankData)
+        {
+            return bankData == DBNull.Value ? Convert.ToSByte(0) : Convert.ToSByte(bankData);
+        }
+
         public static void Log(string content, string FileName)
         {
             try
